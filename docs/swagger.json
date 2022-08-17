@@ -1,0 +1,299 @@
+{
+    "swagger": "2.0",
+    "info": {
+      "description": "API documentation for Testing Genez.",
+      "version": "1.0.0",
+      "title": "Testing Genez backend API Documentation"
+    },
+    "host": "localhost:4000",
+    "basePath": "/api",
+    "tags": [
+      {
+        "name": "Exam",
+        "description": "All Exam routes"
+      },
+      {
+        "name": "Question",
+        "description": "All Question routes "
+      },
+      {
+        "name": "Branch",
+        "description": "All Branch routes"
+      },
+      {
+        "name": "Auth",
+        "description": "Authorization Routes"
+      }
+    ],
+    "schemes": ["http"],
+    "paths": {
+      "/exam/exams": {
+        "get": {
+          "tags": ["Exam"],
+          "summary": "Will get all Exams info",
+          "description": "",
+          "operationId": "getAllExamData",
+          "consumes": ["application/json"],
+          "produces": ["application/json"],
+          "parameters": [],
+          "responses": {
+            "200": {
+              "description": "Success"
+            },
+            "403": {
+              "description": "Forbidden"
+            },
+            "405": {
+              "description": "Invalid input"
+            }
+          },
+          "security": [
+            {
+              "api_key": []
+            }
+          ]
+        }
+      },
+      "/question/questions": {
+        "get": {
+          "tags": ["Question"],
+          "summary": "Will get all Questions info",
+          "description": "",
+          "operationId": "getAllQuestionData",
+          "consumes": ["application/json"],
+          "produces": ["application/json"],
+          "parameters": [],
+          "responses": {
+            "200": {
+              "description": "Success"
+            },
+            "403": {
+              "description": "Forbidden"
+            },
+            "405": {
+              "description": "Invalid input"
+            }
+          },
+          "security": [
+            {
+              "api_key": []
+            }
+          ]
+        }
+      },
+      "/question/question": {
+        "post": {
+          "tags": ["Question"],
+          "summary": "Add a new question",
+          "description": "",
+          "operationId": "addNewQuestion",
+          "consumes": ["application/json"],
+          "produces": ["application/json"],
+          "parameters": [
+            {
+              "in": "body",
+              "name": "body",
+              "description": "Question to be added",
+              "required": true,
+              "schema": {
+                "$ref": "#/definitions/AddQuestion"
+              }
+            }
+          ],
+          "responses": {
+            "200": {
+              "description": "Success"
+            },
+            "403": {
+              "description": "Forbidden"
+            },
+            "400": {
+              "description": "Invalid input / Some error"
+            }
+          },
+          "security": [
+            {
+              "api_key": []
+            }
+          ]
+        }
+      },
+      "/branch/branches": {
+        "get": {
+          "tags": ["Branch"],
+          "summary": "Will get all Branch info",
+          "description": "",
+          "operationId": "getAllBranchData",
+          "consumes": ["application/json"],
+          "produces": ["application/json"],
+          "parameters": [],
+          "responses": {
+            "200": {
+              "description": "Success"
+            },
+            "403": {
+              "description": "Forbidden"
+            },
+            "405": {
+              "description": "Invalid input"
+            }
+          },
+          "security": [
+            {
+              "api_key": []
+            }
+          ]
+        }
+      },
+      "/user/login": {
+        "post": {
+          "tags": ["Auth"],
+          "summary": "Login user and get Bearer Token",
+          "description": "",
+          "operationId": "login User",
+          "consumes": ["application/json"],
+          "produces": ["application/json"],
+          "parameters": [
+            {
+              "in": "body",
+              "name": "body",
+              "description": "Login user parameters",
+              "required": true,
+              "schema": {
+                "$ref": "#/definitions/LoginUser"
+              }
+            }
+          ],
+          "responses": {
+            "200": {
+              "description": "Success"
+            },
+            "405": {
+              "description": "Invalid input"
+            }
+          }
+        }
+      }
+    },
+    "securityDefinitions": {
+      "api_key": {
+        "type": "apiKey",
+        "name": "Authorization",
+        "in": "header"
+      }
+    },
+    "definitions": {
+      "Exam": {
+        "type": "object",
+        "properties": {
+          "examId": {
+            "type": "integer",
+            "format": "int64",
+            "example": 12
+          },
+          "name": {
+            "type": "string",
+            "example": "Maths Test"
+          },
+          "date": {
+            "type": "date",
+            "example": "2020-08-08"
+          },
+          "duration": {
+            "type": "time",
+            "example": "01:00:00"
+          },
+          "questionCount": {
+            "type": "integer",
+            "example": 10
+          }
+        }
+      },
+      "Question": {
+        "type": "object",
+        "properties": {
+          "questionId": {
+            "type": "integer",
+            "format": "int64",
+            "example": 12
+          },
+          "title": {
+            "type": "string",
+            "example": "Define Biodiversity."
+          },
+  
+          "type": {
+            "type": "string",
+            "example": ["MCQ", "DESCRPTIVE"]
+          },
+          "marks": {
+            "type": "int64",
+            "example": "10"
+          }
+        }
+      },
+      "Branch": {
+        "type": "object",
+        "properties": {
+          "branchId": {
+            "type": "integer",
+            "format": "int64",
+            "example": 12
+          },
+          "name": {
+            "type": "string",
+            "example": "Computer Engg"
+          },
+          "capacity": {
+            "type": "integer",
+            "example": 60
+          }
+        }
+      },
+      "AddQuestion": {
+        "type": "object",
+        "properties": {
+          "title": {
+            "type": "string",
+            "example": "Define Biodiversity."
+          },
+          "type": {
+            "type": "string",
+            "example": "MCQ"
+          },
+          "marks": {
+            "type": "int64",
+            "example": "10"
+          }
+        }
+      },
+      "LoginUser": {
+          "type": "object",
+          "properties": {
+            "email": {
+              "type": "string",
+              "example": "mk@gmail.com"
+            },
+            "password": {
+              "type": "string",
+              "example": "fdsf"
+            }
+          }
+        },
+      "ApiResponse": {
+        "type": "object",
+        "properties": {
+          "code": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "type": {
+            "type": "string"
+          },
+          "message": {
+            "type": "string"
+          }
+        }
+      }
+    }
+  }
