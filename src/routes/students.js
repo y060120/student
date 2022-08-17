@@ -4,6 +4,6 @@ const studentRoutes = express.Router();
 
 const studentsController = require('../controllers/studentsController');
 
-studentRoutes.post('/upload', studentsController.uploadStudents);
+studentRoutes.post('/uploads', studentsController.uploadStudents);
 
 module.exports = studentRoutes;

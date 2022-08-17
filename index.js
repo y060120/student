@@ -31,6 +31,6 @@ server.use((req, res) => {
   });
 });
 
-server.listen(4000, (req, res) => {
+server.listen(process.env.PORT, (req, res) => {
   console.log('listening on : ', process.env.PORT);
 });
