@@ -2,7 +2,10 @@ const express = require('express');
 const swaggerUi = require('swagger-ui-express');
 const bodyParser = require('body-parser');
 const fs = require('fs');
+const fileupload = require("express-fileupload");
 require('dotenv').config();
+
+
 
 const xmlparser = require('express-xml-bodyparser');
 const swaggerDocument = require('./docs/swagger.json');
@@ -10,6 +13,8 @@ const swaggerDocument = require('./docs/swagger.json');
 const apiRoutes = require('./src/routes/index');
 
 const server = express();
+
+server.use(fileupload());
 
 server.use('/api-docs', swaggerUi.serve, swaggerUi.setup(swaggerDocument));
 

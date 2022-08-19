@@ -1,51 +1,19 @@
 const CONSTANTS     = {};
-CONSTANTS.ROLES     = {};
 CONSTANTS.CUSTOMS   = {};
 CONSTANTS.RESPONSES = {};
 
-
-CONSTANTS.SECRETKEY_PATTERN = '^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[^a-zA-Z0-9\\s]).{8,16}$';
-CONSTANTS.JWT_TOKEN_EXPIRY  = '2d';
-CONSTANTS.JWT_TOKEN_PREFIX  = 'Bearer';
-CONSTANTS.JWT_TOKEN_STRING  = 'Authorization';
-CONSTANTS.JWT_ISSUER        = 'Teknotrait'; 
-CONSTANTS.JWT_SECRET_KEY    = 'RcA8VbEPvmE5tfdsfdsnQSVFB';
-
-
-CONSTANTS.ROLES.CLIENT  = 1;
-CONSTANTS.ROLES.ADMIN   = 2;
-
 CONSTANTS.CUSTOMS.EMAIL_REGISTERED  = 'Email already Registered';
 CONSTANTS.CUSTOMS.EXCEPTION_ERROR   = 'Some Error occured';
-CONSTANTS.CUSTOMS.REGISTER_SUCCESS  = 'Successfully Registered';
-CONSTANTS.CUSTOMS.UPDATED_SUCCESS   = 'Successfully Updated';
-CONSTANTS.CUSTOMS.PASSWORD_CONFIRM  = 'Password Mismatch with confirmation Password';
 CONSTANTS.CUSTOMS.SUCCESS           = 'success';
 CONSTANTS.CUSTOMS.ERROR             = 'error';
-CONSTANTS.CUSTOMS.LOGGED_IN         = 'Logged In';  
-CONSTANTS.CUSTOMS.INVALID_CREDENTIAL= 'Invalid Credentials';
-CONSTANTS.CUSTOMS.NO_DATA_FOUND     = 'No Datas Found';
+CONSTANTS.CUSTOMS.NO_FILE_FOUND     = 'Kindly Upload a File';
+CONSTANTS.CUSTOMS.NO_DATA_FOUND     = 'No Datas found';
 CONSTANTS.CUSTOMS.ERROR             = 'error';
-CONSTANTS.CUSTOMS.PACKAGE_EXISTS    = 'Package Name already Exists';
-CONSTANTS.CUSTOMS.PACKAGE_ADDED     = 'Package Added Successfully';
-CONSTANTS.CUSTOMS.PACKAGE_NOTFOUND  = 'No Package Found';
-CONSTANTS.CUSTOMS.PACKAGES_NOTFOUND = 'No Packages Found';
-CONSTANTS.CUSTOMS.MAP_PACKAGE       = 'Successfully Mapped';
-CONSTANTS.CUSTOMS.PACKAGE_ERROR     = 'Unable to assign Package';
-CONSTANTS.CUSTOMS.EMAIL_SETTINGS    = 'No Email Settings Found for the User';
-CONSTANTS.CUSTOMS.EMAIL_SETTINGS_SAVE   = 'Settings Saved Successfully';
-CONSTANTS.CUSTOMS.DATA_RETRIEVED        = 'Data retrieved';
-CONSTANTS.CUSTOMS.SOMETHING_WRONG       = "Something Wrong";
-CONSTANTS.CUSTOMS.NOT_AUTHORIZED        = "User Not Authorized";
-CONSTANTS.CUSTOMS.ADMIN_AUTHORIZZED     = "Normal User cant access Admin routes";
-CONSTANTS.CUSTOMS.INVALID_TOKEN         = "Invalid Token";
-CONSTANTS.CUSTOMS.TOKEN_NOT_FOUND       = "No Token Found";
-
-CONSTANTS.CUSTOMS.LOGO                  = 'Invalid Logo Image Format';
-CONSTANTS.CUSTOMS.STAMP                 = 'Invalid Stamp Image Format';
-CONSTANTS.CUSTOMS.WATERMARK             = 'Invalid Watermark Image Format';
-
-
+CONSTANTS.CUSTOMS.DATA_RETRIEVED    = 'Data retrieved';
+CONSTANTS.CUSTOMS.SOMETHING_WRONG   = "Something Wrong";
+CONSTANTS.CUSTOMS.DATA_FOUND        = "Existing Datas Found Clear it Before Proceeding";
+CONSTANTS.CUSTOMS.CLEARED           = "Data Cleared Successfully";
+CONSTANTS.CUSTOMS.IMPORT_SUCCESS    = "Data Imported Successfully";
 // RESPONSE CODES
 CONSTANTS.RESPONSES.SUCCESS             = 200;
 CONSTANTS.RESPONSES.BAD_REQUEST         = 400;

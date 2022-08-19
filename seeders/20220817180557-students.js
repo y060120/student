@@ -10,8 +10,8 @@ module.exports = {
          mark2:85,
          mark3:60,
          result_status:'passed',
-         created_at: new Date(),
-         updated_at: new Date()
+         createdAt: new Date(),
+         updatedAt: new Date()
       },
       {
         name: 'Doe',
@@ -21,8 +21,8 @@ module.exports = {
         mark2:85,
         mark3:70,
         result_status:'passed',
-        created_at: new Date(),
-        updated_at: new Date()
+        createdAt: new Date(),
+        updatedAt: new Date()
       },
       {
         name: 'Sam',
@@ -32,8 +32,8 @@ module.exports = {
         mark2:55,
         mark3:50,
         result_status:'failed',
-        created_at: new Date(),
-        updated_at: new Date()
+        createdAt: new Date(),
+        updatedAt: new Date()
       }
     ], {});
   },

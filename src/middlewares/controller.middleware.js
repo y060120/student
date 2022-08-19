@@ -9,7 +9,7 @@ const controllerService = async(req, res, parameter) => {
             return res.status(CONSTANTS.RESPONSES.SUCCESS ).json({ msg: parameter.status});
         }        
     } else {        
-        return res.status(CONSTANTS.RESPONSES.UNAUTHORIZE).json({ msg: CONSTANTS.CUSTOMS.SOMETHING_WRONG });
+        return res.status(CONSTANTS.RESPONSES.UNAUTHORIZE).json({ msg: parameter.status });
     }
 }
 
