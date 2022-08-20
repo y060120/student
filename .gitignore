@@ -1,0 +1,18 @@
+# Node modules
+node_modules
+package-lock.json
+
+# Environment variables, never commit this file
+.env
+.history
+.vscode
+.idea
+.vagrant
+npm-shrinkwrap.json
+storage
+public/uploads
+postgresql
+logs
+
+# The development sqlite file
+database/development.sqlite

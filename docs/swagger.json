@@ -1,0 +1,162 @@
+{
+    "swagger": "2.0",
+    "info": {
+      "description": "API documentation for Students",
+      "version": "1.0.0",
+      "title": "Testing Documentation for Student Details"
+    },
+    "host": "localhost:8000",
+    "basePath": "/api",
+    "tags": [
+      {
+        "name": "Upload",
+        "description": "Upload Routes"
+      },
+      {
+        "name": "Retrieve",
+        "description": "Retrieve Student Data"
+      },
+      {
+        "name": "Clear",
+        "description": "Clear all Data"
+      }      
+    ],
+    "schemes": ["http"],
+    "paths": {
+      "/uploads": {
+        "post": {
+          "tags": ["Upload"],
+          "summary": "Upload using Csv",
+          "description": "",
+          "operationId": "uploadData",
+          "consumes": ["application/json"],
+          "produces": ["application/json"],
+          "parameters": [
+            {
+              "in": "formData",
+              "name": "uploadCsv",
+              "type": "file"             
+            }     
+          ],          
+          "responses": {
+            "200": {
+              "description": "Success"
+            },
+            "403": {
+              "description": "Forbidden"
+            },
+            "405": {
+              "description": "Invalid input"
+            }
+          },
+          "security": [
+            {
+              "api_key": []
+            }
+          ]
+        }
+      },
+      "/getStudentById/{id}":{
+        "get": {
+          "tags": ["Retrieve"],
+          "summary": "Retrieve Student by Id",
+          "description": "Retrieve Student by Id",
+          "operationId": "getStudentById",
+          "consumes": ["application/json"],
+          "produces": ["application/json"],
+          "parameters": [
+            {
+              "in": "path",
+              "name": "id",
+              "description": "Valid Student Id",
+              "required": true            
+            }
+          ],
+          "responses": {
+            "200": {
+              "description": "success"
+            },
+            "401":{
+              "description":"Unauthorized"
+            },
+            "403":{
+              "description":"Some Error occured"
+            }           
+          },          
+          "security": [
+            {
+              "api_key": []
+            }
+          ]
+        }
+      },
+      "/getResultStatus/{resultStatus}":{
+        "get": {
+          "tags": ["Retrieve"],
+          "summary": "Retrieve Student by Result",
+          "description": "Retrieve Student by Result",
+          "operationId": "getResultStatus",
+          "consumes": ["application/json"],
+          "produces": ["application/json"],
+          "parameters": [
+            {
+              "in": "path",
+              "name": "resultStatus",
+              "description": "Valid Result Status pass/failed",
+              "required": true            
+            }
+          ],
+          "responses": {
+            "200": {
+              "description": "success"
+            },
+            "401":{
+              "description":"Unauthorized"
+            },
+            "403":{
+              "description":"Some Error occured"
+            }           
+          },          
+          "security": [
+            {
+              "api_key": []
+            }
+          ]
+        }
+      },
+      "/clearAllData": {
+        "get": {
+          "tags": ["Clear"],
+          "summary": "Clear all Data",
+          "description": "",
+          "operationId": "clearAllData",
+          "consumes": ["application/json"],
+          "produces": ["application/json"],
+          "parameters": [],
+          "responses": {
+            "200": {
+              "description": "Success"
+            },
+            "403": {
+              "description": "Forbidden"
+            },
+            "405": {
+              "description": "Invalid input"
+            }
+          },
+          "security": [
+            {
+              "api_key": []
+            }
+          ]
+        }
+      }      
+    },
+    "securityDefinitions": {
+      "api_key": {
+        "type": "apiKey",
+        "name": "Authorization",
+        "in": "header"
+      }
+    }    
+  }
